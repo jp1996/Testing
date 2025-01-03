@@ -13,3 +13,4 @@ Javascript projects:
 	implement animations, graphics, and sounds
 	SpaceShooter - Uses Kaplay and nodeJS, learned how to create simple game and implement graphics, 
 	sounds, and scenes
+	ReactGame - Uses Kaplay, React, Jotai, and framer motion
