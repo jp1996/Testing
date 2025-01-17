@@ -28,6 +28,17 @@ export default function initGame() {
         }
     });
 
+    k.loadSprite("fox","fox.png", {
+        sliceY: 1,
+        sliceX: 4,
+        anims: {
+            "left-idle": 0,
+            "right-idle": 1,
+            "down-idle": 2,
+            "up-idle": 3,
+        }
+    });
+
     k.add([
         k.sprite("bg"),
         k.pos(0, -70),
@@ -96,6 +107,15 @@ export default function initGame() {
         k.pos(1480, 500),
     ]);
 
+    const fox = k.add([
+        k.sprite("fox", {anim: "down-idle"}),
+        k.area(),
+        k.body({ isStatic: true }),
+        k.anchor("center"),
+        k.scale(6),
+        k.pos(1480, 800),
+    ]);
+
     npc.onCollide("player", (player) => {
         if (player.direction.eq(k.vec2(0, -1))){
             store.set(textBoxContentAtom, "Beautiful day, isn't it?")
@@ -115,5 +135,21 @@ export default function initGame() {
         }
 
         store.set(isTextBoxVisibleAtom, true);
+    });
+
+
+    fox.onCollide("player", (player) => {
+        if (player.direction.eq(k.vec2(0, -1))){
+            fox.play("down-idle");
+        }
+        if (player.direction.eq(k.vec2(0, 1))){
+            fox.play("up-idle");
+        }
+        if (player.direction.eq(k.vec2(-1, 0))){
+            fox.play("right-idle");
+        }
+        if (player.direction.eq(k.vec2(1, 0))){
+            fox.play("left-idle");
+        }
     });
 }
