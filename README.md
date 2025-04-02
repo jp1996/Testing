@@ -18,6 +18,7 @@ Javascript projects:
 	ReactGame - Uses Kaplay, React, Jotai, and framer motion
 	React-Tutorial - basic functionalities of all react components
 	Kaplay-Platformer - Uses Kaplay and React to create a mario-like game, including player movement, multiple levels, and enemy NPC movement.
+	ReactDashboard - Uses react, syncfusion, and tailwindcss to customize a dashboard with multiple different data visualization tools, user interactive elements, and theme customizations.
 	
 PixelArt:
 	Fox - learning how to do sprite sheets
